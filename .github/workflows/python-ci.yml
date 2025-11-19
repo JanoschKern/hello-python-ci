@@ -31,7 +31,7 @@ jobs:
 
       - name: Run tests
         run: |
-          if [ -f pytest.ini ] || [ -d tests ]; then pytest; else echo "No tests found"; fi
+          if [ -f tests/test_hello.py ] || [ -d tests ]; then pytest; else echo "No tests found"; fi
 
       - name: Configure git
         run: |
