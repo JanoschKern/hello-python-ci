@@ -1,4 +1,2 @@
-from hello import greet
-
-def test_greet():
-    assert greet("Github") == "Hello, GitHub!"
+def test_wird_absichtlich_fehlschlagen():
+    assert 1 == 2  # absichtlich falsch
