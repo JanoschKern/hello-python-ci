@@ -25,4 +25,4 @@ jobs:
     needs: build   # startet "deploy" nur, wenn "build" erfolgreich war!
     steps:
       - name: Symbolisches Deployment
-        run: echo "Deploy Erfolgreich am $(date)" > deployment.txt
+        run: echo "Deploy erfolgreich am $(date)" > deployment.txt
