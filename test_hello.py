@@ -1,4 +1,4 @@
 from hello import greet
 
 def test_greet():
-    assert greet("World") == "Hello, GitHub!"
+    assert greet("Github") == "Hello, GitHub!"
