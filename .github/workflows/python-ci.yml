@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Symbolisches Deployment
         run: echo "Deploy erfolgreich am $(date)" > deployment.txt
-            - name: Push changes
+      - name: Push changes
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
