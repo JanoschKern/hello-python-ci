@@ -1,4 +1,4 @@
-name: Python application test & symbolic deployment
+name: Python application test & actuall deployment
 
 on:
   push:
@@ -22,7 +22,17 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build   # startet "deploy" nur, wenn "build" erfolgreich war!
+    needs: build
     steps:
+      - uses: actions/checkout@v3  # nochmal Checkout
       - name: Symbolisches Deployment
         run: echo "Deploy erfolgreich am $(date)" > deployment.txt
+      - name: Commit deployment.txt ins Repository
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add deployment.txt
+          git commit -m "Add deployment.txt via CI/CD"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
